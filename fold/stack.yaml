@@ -1,0 +1,11 @@
+# Specifies the GHC version and set of packages available
+resolver: lts-14.23
+
+# Allow users who don't own the .stack dir to use stack. (This is important for
+# running on ieng6)
+allow-different-user: true
+
+# It's important to turn off optimization on our code so we can e.g. hide
+# complicated IO stuff behind unsafePerformIO
+ghc-options:
+  "$locals": -O0
